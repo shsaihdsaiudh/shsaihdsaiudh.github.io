@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2025/05/11/hello-world/</url>
+    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+More info: Writing
+Run server$ hexo server
+More info: Server
+Generate static files$ hexo generate
+More info: Generating
+Deploy to remote sites$ hexo deploy
+More info: Deployment
+]]></content>
+  </entry>
+  <entry>
+    <title>hello</title>
+    <url>/2025/05/11/hello/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>ʯͷ������</title>
+    <url>/2025/05/15/%E7%9F%B3%E5%A4%B4%E5%89%AA%E5%88%80%E5%B8%83/</url>
+    <content><![CDATA[#include &lt;stdio.h&gt;#include &lt;stdint.h&gt;#include &lt;time.h&gt;#include &lt;stdlib.h&gt; #define u32 uint32_t#define ROCK 1#define PAPER 2#define SCISSORS 3 void destemine_winner(u32 player_move, u32 computer_move)&#123;	//�����ų�ƽ�ֵ����	if (player_move == computer_move) &#123;		puts(&quot;ƽ�֣�&quot;);		return;	&#125; 	//����һ��ʤ���Ĺ���ӳ�䣬���м�����ҵ��ƶ���ֵ������ƶ����Դ�ܼ�������ƶ� 	u32 winning_moves[4] = &#123; 0, SCISSORS, ROCK, PAPER &#125;;	//0��ռλ�� 	//winning_moves[1] SCISSORS	//ROCK == 1	//PAPER == 2	//SCISSORS == 3		//����player_move����ҵ��ƶ���winning_moves[player_move]����ǿ��Դ�ܼ�������ƶ�	//����˵���ѡ1��ֻ�е������ѡ3ʱ�Ż��䣬��ô�ͽ�winning_moves�е�winning_moves[1]����λ3	if (computer_move == winning_moves[player_move]) &#123;		puts(&quot;��Ӯ�ˣ�&quot;);	&#125;	else &#123;		puts(&quot;�����ˣ�&quot;);	&#125;&#125; u32 get_player_choice() &#123;	u32 choice;	puts(&quot;��ѡ��1��ʯͷ��2�ǲ���3�Ǽ���&quot;);	scanf_s(&quot;%d&quot;, &amp;choice); 	while (choice &lt; ROCK || choice &gt; SCISSORS) &#123;		puts(&quot;��Чѡ��������ѡ��1��ʯͷ��2�ǲ���3�Ǽ���&quot;);		scanf_s(&quot;%d&quot;, &amp;choice);	&#125; 	return choice;&#125; u32 get_computer_choice() &#123;	return (rand() % (SCISSORS - ROCK + 1)) + ROCK;&#125; void print_instructions() &#123; 	puts(&quot;ʯͷ~����~������Ϸ��ʼ��&quot;);	puts(&quot;�����������֣�ȷ����ȭ��1��ʯͷ��2�ǲ���3�Ǽ���&quot;);	puts(&quot;==========================================&quot;);&#125;void print_choice(u32 choice) &#123;	switch (choice)	&#123;	case ROCK: puts(&quot;ʯͷ&quot;); break;	case PAPER: puts(&quot;��&quot;); break;	case SCISSORS: puts(&quot;����&quot;); break;	&#125;&#125; int main(void)&#123;	//��ʼ�������������	srand(time(NULL)); 	//��ӡ��Ϸ˵��	print_instructions(); 	//��ȡ��Һͼ������ѡ��	u32 player_choice = get_player_choice();	u32 computer_choice = get_computer_choice(); 	//չʾ��Һͼ�������ѡ��	puts(&quot;��ѡ����&quot;);	print_choice(player_choice);	puts(&quot;�����ѡ����&quot;);	print_choice(computer_choice); 	//�ж�ȷ��Ӯ�ң�����չʾ	destemine_winner(player_choice, computer_choice); 	return 0;&#125;]]></content>
+      <tags>
+        <tag>game</tag>
+      </tags>
+  </entry>
+</search>
